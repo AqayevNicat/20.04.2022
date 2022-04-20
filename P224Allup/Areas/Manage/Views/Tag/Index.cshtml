@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Tag>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-lg-10 h3 mb-4 text-gray-800">
+        <h1>Tags</h1>
+    </div>
+    <div class="col-lg-2 h3 mb-4 text-gray-800">
+        <a asp-controller="Tag" asp-action="Create" asp-area="Manage" class="btn btn-primary">Create</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 tagTable">
+        @await Html.PartialAsync("_TagIndexPartial", Model) 
+    </div>
+</div>
+
+@section Script{
+    <script src="~/manage/js/sweetalert2.all.min.js"></script>
+    <script src="~/manage/js/Custom.js" asp-append-version="true"></script>
+<script>
+    
+</script>
+}
+
+@section Style{
+    <link href="~/manage/css/sweetalert2.min.css" rel="stylesheet" />
+}
